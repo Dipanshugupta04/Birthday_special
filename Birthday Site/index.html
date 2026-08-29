@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Surprise for You ✨</title>
+  
+  <!-- Modern Typography (Inter & Playfair Display for elegant contrast) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Music Element -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="./assets/audio/birthday-song.mp3" type="audio/mp3">
+    <!-- <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mp3"> -->
+  </audio>
+
+  <!-- Interactive Floating Particles Background Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Global Music Toggle UI -->
+  <button id="music-toggle" class="music-btn hidden" aria-label="Toggle Music">
+    <span class="music-icon">🎵</span>
+    <span class="music-wave">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- Global Journey Progress Bar -->
+  <div id="progress-container" class="progress-container hidden">
+    <div class="progress-bar-track">
+      <div id="progress-bar-fill" class="progress-bar-fill"></div>
+    </div>
+    <div class="progress-text">Journey Progress: <span id="progress-percent">0%</span></div>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <main id="app-container">
+
+    <!-- PAGE 1: THE INTRODUCTION -->
+    <section id="page-1" class="page-section active">
+      <div class="glass-card fade-in">
+        <h1 class="intro-heading">Hey... 👀</h1>
+        <p class="intro-subtext">I made something special just for you.</p>
+        <button id="start-btn" class="primary-btn pulse-glow">Open Your Surprise ✨</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2: THREE PERSONAL MESSAGES -->
+    <section id="page-2" class="page-section hidden">
+      <div class="glass-card text-center">
+        <div class="message-container">
+          <p id="message-text" class="typing-text"></p>
+        </div>
+        <button id="msg-next-btn" class="primary-btn">Next →</button>
+      </div>
+    </section>
+
+    <!-- PAGE 3: INTERACTIVE QUESTION GAME -->
+    <section id="page-3" class="page-section hidden">
+      <div class="glass-card text-center">
+        <div class="step-label">Mini Game 🎮</div>
+        <h2 id="question-text" class="question-title"></h2>
+        
+        <div id="game-reaction-toast" class="toast hidden">Nice try 😏</div>
+        
+        <div class="btn-group">
+          <button id="btn-yes" class="game-btn yes-btn">YES! ❤️</button>
+          <button id="btn-no" class="game-btn no-btn">NO 🥺</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4: FRIENDSHIP JOURNEY CARDS -->
+    <section id="page-4" class="page-section hidden">
+      <div class="section-header text-center">
+        <span class="emoji-heading">🗺️</span>
+        <h2 class="section-title">Our Story</h2>
+        <p class="section-sub">A look back at some of our beautiful milestones...</p>
+      </div>
+
+      <div class="story-cards-container">
+        <!-- Story Cards will be generated dynamically from data.js -->
+        <div id="story-cards-wrapper"></div>
+      </div>
+
+      <div class="story-navigation text-center">
+        <button id="story-next-btn" class="primary-btn">Continue Journey ✨</button>
+      </div>
+    </section>
+
+    <!-- PAGE 5: 10 MEMORY PHOTO GALLERY -->
+    <section id="page-5" class="page-section hidden">
+      <div class="section-header text-center">
+        <span class="emoji-heading">📸</span>
+        <h2 class="section-title">Memory Album</h2>
+        <p class="section-sub">10 unforgettable moments captured in time</p>
+      </div>
+
+      <!-- Polaroid Masonry Grid -->
+      <div id="polaroid-grid" class="polaroid-grid">
+        <!-- Polaroid items will be generated dynamically -->
+      </div>
+
+      <div class="gallery-footer text-center">
+        <p class="gallery-conclusion-text">
+          10 memories... and somehow there are still thousands more to create. ❤️
+        </p>
+        <button id="gallery-next-btn" class="primary-btn pulse-glow">One Last Surprise 🎁</button>
+      </div>
+    </section>
+
+    <!-- PAGE 6: BIRTHDAY QUESTION -->
+    <section id="page-6" class="page-section hidden">
+      <div class="glass-card text-center">
+        <span class="large-icon">👀</span>
+        <h2>Okay birthday girl...</h2>
+        <p class="prompt-text">One important question before we proceed:</p>
+        <h3 class="question-highlight">How old are you today? 🎂</h3>
+        
+        <div id="age-choices-grid" class="choices-grid">
+          <!-- Age choices will be dynamic -->
+        </div>
+
+        <div id="age-feedback" class="feedback-msg error hidden"></div>
+      </div>
+    </section>
+
+    <!-- PAGE 7: BIG HAPPY BIRTHDAY REVEAL -->
+    <section id="page-7" class="page-section hidden">
+      <div class="celebration-screen">
+        <div class="birthday-card glass-card text-center scale-up">
+          <h1 class="hbd-title">🎉 HAPPY BIRTHDAY 🎉</h1>
+          <h2 id="birthday-name" class="hbd-name"></h2>
+          <p class="hbd-quote">Another year older, another year more amazing. ❤️</p>
+          <p class="hbd-prompt">Today is your day! 🎂</p>
+          <button id="reveal-continue-btn" class="primary-btn reveal-pulse">Let's Celebrate! 🥳</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 8 & 9: CAKE CELEBRATION & INTERACTION -->
+    <section id="page-8" class="page-section hidden">
+      <div class="glass-card text-center cake-card">
+        <div class="cake-header">
+          <h2>Make a Wish & Cut the Cake! 🎂</h2>
+          <p>Click the button below to slice the cake</p>
+        </div>
+
+        <!-- The Animated SVG Cake Container -->
+        <div class="cake-container">
+          <div class="balloons-float-container">
+            <!-- Animated SVG / DOM Balloons floating in bg -->
+            <div class="balloon b1"></div>
+            <div class="balloon b2"></div>
+            <div class="balloon b3"></div>
+          </div>
+          
+          <svg id="svg-cake" viewBox="0 0 400 400" width="300" height="300">
+            <!-- Knife (initially hidden or positioned off-cake) -->
+            <g id="cake-knife" class="knife-group hidden">
+              <path d="M 330 80 L 250 160 L 240 150 L 320 70 Z" fill="#b0bec5" stroke="#37474f" stroke-width="2"/>
+              <path d="M 320 70 L 350 40 C 355 35, 365 35, 370 40 L 380 50 C 385 55, 385 65, 380 70 L 350 100 Z" fill="#8d6e63" stroke="#37474f" stroke-width="2"/>
+            </g>
+
+            <!-- Table/Stand -->
+            <ellipse cx="200" cy="340" rx="140" ry="20" fill="#e0e0e0" stroke="#b0bec5" stroke-width="3"/>
+            <path d="M 170 340 L 180 380 L 220 380 L 230 340 Z" fill="#b0bec5"/>
+            <ellipse cx="200" cy="380" rx="50" ry="10" fill="#9e9e9e"/>
+
+            <!-- Cake Slices - Left and Right groups -->
+            <g id="cake-left-slice" class="cake-slice">
+              <!-- Left Base -->
+              <path d="M 100 240 L 200 250 L 200 320 L 100 310 Z" fill="#ec407a"/>
+              <!-- Left Top -->
+              <ellipse cx="150" cy="245" rx="50" ry="15" fill="#f48fb1"/>
+              <!-- Frosting layers -->
+              <rect x="100" y="270" width="100" height="8" fill="#f8bbd0"/>
+              <rect x="100" y="295" width="100" height="8" fill="#f8bbd0"/>
+            </g>
+
+            <g id="cake-right-slice" class="cake-slice">
+              <!-- Right Base -->
+              <path d="M 200 250 L 300 240 L 300 310 L 200 320 Z" fill="#ec407a"/>
+              <!-- Right Top -->
+              <ellipse cx="250" cy="245" rx="50" ry="15" fill="#f48fb1"/>
+              <!-- Frosting layers -->
+              <rect x="200" y="270" width="100" height="8" fill="#f8bbd0"/>
+              <rect x="200" y="295" width="100" height="8" fill="#f8bbd0"/>
+            </g>
+
+            <!-- Center slice line overlay (used during cutting animation) -->
+            <line id="cake-slice-line" x1="200" y1="230" x2="200" y2="330" stroke="#880e4f" stroke-width="4" stroke-dasharray="5 5" />
+
+            <!-- Candles and Flames -->
+            <g id="candles">
+              <!-- Left Candle -->
+              <rect x="145" y="195" width="10" height="40" rx="3" fill="#4fc3f7"/>
+              <path d="M 150 195 L 150 185" stroke="#37474f" stroke-width="2"/>
+              <path id="flame-left" class="candle-flame" d="M 150 185 C 145 175, 150 160, 150 160 C 150 160, 155 175, 150 185 Z" fill="#ffb74d"/>
+
+              <!-- Center Candle -->
+              <rect x="195" y="190" width="10" height="45" rx="3" fill="#81c784"/>
+              <path d="M 200 190 L 200 180" stroke="#37474f" stroke-width="2"/>
+              <path id="flame-center" class="candle-flame" d="M 200 180 C 195 170, 200 155, 200 155 C 200 155, 205 170, 200 180 Z" fill="#ff9800"/>
+
+              <!-- Right Candle -->
+              <rect x="245" y="195" width="10" height="40" rx="3" fill="#ffb74d"/>
+              <path d="M 250 195 L 250 185" stroke="#37474f" stroke-width="2"/>
+              <path id="flame-right" class="candle-flame" d="M 250 185 C 245 175, 250 160, 250 160 C 250 160, 255 175, 250 185 Z" fill="#ffb74d"/>
+            </g>
+
+            <!-- Decorative sprinkles on top -->
+            <circle cx="130" cy="245" r="3" fill="#ba68c8"/>
+            <circle cx="160" cy="250" r="3" fill="#ffd54f"/>
+            <circle cx="180" cy="242" r="3" fill="#ff8a65"/>
+            <circle cx="220" cy="242" r="3" fill="#ff8a65"/>
+            <circle cx="240" cy="250" r="3" fill="#ffd54f"/>
+            <circle cx="270" cy="245" r="3" fill="#ba68c8"/>
+          </svg>
+        </div>
+
+        <div id="cake-status-message" class="cake-status-msg hidden">
+          <h3>🎉 Cake successfully cut! 🎉</h3>
+          <p>Now save me a piece! 😂</p>
+        </div>
+
+        <div class="cake-controls">
+          <button id="cut-cake-btn" class="primary-btn glow-anim">🎂 Cut the Cake</button>
+          <button id="cake-continue-btn" class="primary-btn hidden">Continue ❤️</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 10: FINAL MESSAGE & REPLAY -->
+    <section id="page-10" class="page-section hidden">
+      <div class="glass-card text-center final-card">
+        <div class="final-letter-content">
+          <div class="heart-seal">❤️</div>
+          <div id="final-paragraphs">
+            <!-- Dynamic letters paragraphs -->
+          </div>
+          <p id="final-signature" class="signature-text"></p>
+        </div>
+        
+        <button id="replay-btn" class="primary-btn secondary-btn">Replay Our Journey ↻</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX FOR PHOTO GALLERY -->
+  <div id="lightbox" class="lightbox hidden" aria-modal="true" role="dialog">
+    <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Enlarged Memory">
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Injecting Javascript Config & App Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
