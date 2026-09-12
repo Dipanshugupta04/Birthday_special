@@ -52,79 +52,81 @@ const birthdayData = {
   ],
 
   // Page 4: Friendship / Life Journey Cards
-  journey: [
-    {
-      title: "Where It All Started",
-      date: "The Beginning",
-      description: "Every beautiful journey starts somewhere. This was one of those moments that slowly became a beautiful friendship.",
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=600&auto=format&fit=crop"
-    },
-    {
-      title: "Random Conversations",
-      date: "Late Night Talks",
-      description: "From random talks to conversations that somehow lasted forever...",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop"
-    },
-    {
-      title: "The Crazy Moments",
-      date: "Pure Fun",
-      description: "Some memories don't need an explanation. They just need us to remember how crazy we were.",
-      image: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=600&auto=format&fit=crop"
-    },
-    {
-      title: "Always There",
-      date: "Through Thick & Thin",
-      description: "Through good days, bad days and completely random days, you became someone I could always count on.",
-      image: "https://images.unsplash.com/photo-1484712401471-05c7215830eb?q=80&w=600&auto=format&fit=crop"
-    },
-    {
-      title: "Still Creating Memories",
-      date: "And Beyond...",
-      description: "And honestly...\nI hope this journey never ends.",
-      image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=600&auto=format&fit=crop"
-    }
-  ],
+ 
+journey: [
+  {
+    title: "You’re Honestly One of a Kind",
+    date: "The Person You Are",
+    description: "There are a lot of people in life, but very few who are genuinely special. You’re one of those people. The way you care, understand and make people feel comfortable is something I really admire about you."
+     image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0048.jpg"
+  },
+  {
+    title: "That Smile of Yours",
+    date: "One Thing I’ll Always Notice",
+    description: "I don’t know if you realize it, but your smile has a different kind of magic. Even on a normal day, seeing you smile somehow makes everythingfeel a little better."
+     image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0047.jpg"
+  },
+  {
+    title: "I’m Proud of You",
+    date: "More Than You Know",
+    description: "I’ve seen you handle things, deal with difficult days and still keep moving forward. You may not always realize how strong you are, but I do. And honestly, I’m really proud of the person you’re becoming."
+   image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0035.jpg"
+  },
+  {
+    title: "Never Change These Things About You",
+    date: "What Makes You Special",
+    description: "Stay the same kind, caring and slightly crazy person you are. Those little things you sometimes think are nothing are actually the things that make you so special to the people who know you."
+ image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0033.jpg"
+  },
+  {
+    title: "You Deserve The Best",
+    date: "Always Remember This",
+    description: "I genuinely hope you get everything you wish for. You deserve people who value you, moments that make you happy and a life that gives you plenty of reasons to smile. And I’ll always be happy to see you doing well."
+   image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0018.jpg"
+  }
+],
+
 
   // Page 5: 10 Memories Gallery (Polaroids)
   memories: [
     {
-      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20220321-WA0013.jpg",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0011.jpg",
       caption: "That day 😂"
     },
     {
-      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0026.jpg",
       caption: "One of my favorite memories."
     },
     {
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0031.jpg",
       caption: "Pure chaos."
     },
     {
-      image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0036.jpg",
       caption: "Good times."
     },
     {
-      image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0037.jpg",
       caption: "Another unforgettable moment."
     },
     {
-      image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0039.jpg",
       caption: "Just us being us."
     },
     {
-      image: "https://images.unsplash.com/photo-1506869648501-554191b9db96?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0041.jpg",
       caption: "Stupid selfies 🤳"
     },
     {
-      image: "https://images.unsplash.com/photo-1525026198548-4baa3128848c?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0045.jpg",
       caption: "Always smiling 😊"
     },
     {
-      image: "https://images.unsplash.com/photo-1481841580057-e2bc992b8c52?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0046.jpg",
       caption: "Warm sun & laughs ☀️"
     },
     {
-      image: "https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0049.jpg",
       caption: "Cozy vibes ☕"
     }
   ],
