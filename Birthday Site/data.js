@@ -154,7 +154,7 @@ journey: [
   ],
 
   // Signature
-  signature: "— From your best friend ❤️"
+  signature: "— From your best friend Dipanshu(Seth Ji) ❤️"
 };
 
 // Attach to window object for browser access
