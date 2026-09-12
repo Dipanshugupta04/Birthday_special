@@ -602,32 +602,35 @@ html, body {
   white-space: pre-line;
 }
 
+
 /* ==========================================================================
-   PAGE 5: Polaroid Grid Layout
+   PAGE 5: RESPONSIVE POLAROID GRID
    ========================================================================== */
+
 .polaroid-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
   width: 100%;
   margin-bottom: 40px;
+  padding: 5px;
 }
 
-@media (min-width: 768px) {
-  .polaroid-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
+/* Polaroid card */
 .polaroid-item {
-  background: white;
-  padding: 10px 10px 20px 10px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  width: 100%;
+  min-width: 0;
+  background: #ffffff;
+  padding: 10px 10px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: pointer;
   border-radius: 4px;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Keep the Polaroid rotation */
 .polaroid-item:nth-child(even) {
   transform: rotate(-3deg);
 }
@@ -640,39 +643,54 @@ html, body {
   transform: rotate(-1.5deg);
 }
 
+/* Hover */
 .polaroid-item:hover {
   transform: scale(1.05) rotate(0deg) translateY(-5px);
   z-index: 5;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
+/* Image wrapper */
 .polaroid-img-wrapper {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #eee;
-  border: 1px solid #ddd;
+  background: #eeeeee;
+  border: 1px solid #dddddd;
+  position: relative;
 }
 
+/* Image */
 .polaroid-img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
-  transition: transform 0.5s ease;
   display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
 }
 
+/* Optional image zoom */
+.polaroid-item:hover .polaroid-img {
+  transform: scale(1.03);
+}
+
+/* Caption */
 .polaroid-caption {
   font-family: 'Sacramento', cursive;
   font-size: 1.5rem;
-  color: #333;
+  color: #333333;
   text-align: center;
   margin-top: 10px;
+  line-height: 1.2;
+
+  /* Prevent long captions from breaking the card */
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+/* Footer */
 .gallery-footer {
   width: 100%;
   margin-top: 20px;
@@ -683,6 +701,123 @@ html, body {
   margin-bottom: 30px;
   line-height: 1.6;
 }
+
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+
+@media (max-width: 767px) {
+
+  .polaroid-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    padding: 4px;
+  }
+
+  .polaroid-item {
+    padding: 8px 8px 16px;
+  }
+
+  .polaroid-caption {
+    font-size: 1.25rem;
+    margin-top: 8px;
+  }
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+  .polaroid-grid {
+    /* One card per row on mobile */
+    grid-template-columns: 1fr;
+    gap: 28px;
+
+    /* Extra space prevents rotated cards from touching screen edges */
+    padding: 8px 14px;
+    width: 100%;
+  }
+
+  .polaroid-item {
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+
+    padding: 10px 10px 20px;
+    border-radius: 4px;
+  }
+
+  /*
+     Keep the image square and responsive.
+     It will automatically resize according
+     to the mobile screen width.
+  */
+  .polaroid-img-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .polaroid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .polaroid-caption {
+    font-size: 1.45rem;
+    margin-top: 10px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    word-break: break-word;
+  }
+
+  /* Slightly reduce rotation on small screens */
+  .polaroid-item:nth-child(even) {
+    transform: rotate(-2deg);
+  }
+
+  .polaroid-item:nth-child(odd) {
+    transform: rotate(2deg);
+  }
+
+  .polaroid-item:nth-child(3n) {
+    transform: rotate(-1deg);
+  }
+
+  .polaroid-item:hover {
+    transform: scale(1.02) rotate(0deg) translateY(-3px);
+  }
+}
+
+
+/* ==========================================================================
+   VERY SMALL PHONES
+   ========================================================================== */
+
+@media (max-width: 360px) {
+
+  .polaroid-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 6px 10px;
+  }
+
+  .polaroid-item {
+    max-width: 290px;
+    padding: 8px 8px 16px;
+  }
+
+  .polaroid-caption {
+    font-size: 1.3rem;
+  }
+}
+
 
 /* ==========================================================================
    PAGE 6: BIRTHDAY AGE QUESTION
