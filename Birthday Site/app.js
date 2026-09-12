@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
       case 7:
         // Huge Birthday Reveal
-        birthdayName.textContent = config.name;
+        birthdayName.textContent = "Jiya";
         triggerMassiveConfetti();
         // Start floating random balloons in the background
         startRandomBalloons();
