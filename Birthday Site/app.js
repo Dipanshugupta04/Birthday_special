@@ -475,7 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function verifyAge(chosenAge, btnElement) {
-    if (chosenAge === config.age) {
+    if (chosenAge ===21) {
       btnElement.classList.add("correct-choice");
       ageFeedback.textContent = "YESSS! 🎉 You got it!";
       ageFeedback.className = "feedback-msg success";
