@@ -57,31 +57,31 @@ journey: [
   {
     title: "You’re Honestly One of a Kind",
     date: "The Person You Are",
-    description: "There are a lot of people in life, but very few who are genuinely special. You’re one of those people. The way you care, understand and make people feel comfortable is something I really admire about you."
+    description: "There are a lot of people in life, but very few who are genuinely special. You’re one of those people. The way you care, understand and make people feel comfortable is something I really admire about you.",
      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0048.jpg"
   },
   {
     title: "That Smile of Yours",
     date: "One Thing I’ll Always Notice",
-    description: "I don’t know if you realize it, but your smile has a different kind of magic. Even on a normal day, seeing you smile somehow makes everythingfeel a little better."
+    description: "I don’t know if you realize it, but your smile has a different kind of magic. Even on a normal day, seeing you smile somehow makes everythingfeel a little better.",
      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0047.jpg"
   },
   {
     title: "I’m Proud of You",
     date: "More Than You Know",
-    description: "I’ve seen you handle things, deal with difficult days and still keep moving forward. You may not always realize how strong you are, but I do. And honestly, I’m really proud of the person you’re becoming."
+    description: "I’ve seen you handle things, deal with difficult days and still keep moving forward. You may not always realize how strong you are, but I do. And honestly, I’m really proud of the person you’re becoming.",
    image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0035.jpg"
   },
   {
     title: "Never Change These Things About You",
     date: "What Makes You Special",
-    description: "Stay the same kind, caring and slightly crazy person you are. Those little things you sometimes think are nothing are actually the things that make you so special to the people who know you."
+    description: "Stay the same kind, caring and slightly crazy person you are. Those little things you sometimes think are nothing are actually the things that make you so special to the people who know you.",
  image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0033.jpg"
   },
   {
     title: "You Deserve The Best",
     date: "Always Remember This",
-    description: "I genuinely hope you get everything you wish for. You deserve people who value you, moments that make you happy and a life that gives you plenty of reasons to smile. And I’ll always be happy to see you doing well."
+    description: "I genuinely hope you get everything you wish for. You deserve people who value you, moments that make you happy and a life that gives you plenty of reasons to smile. And I’ll always be happy to see you doing well.",
    image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20260910-WA0018.jpg"
   }
 ],
