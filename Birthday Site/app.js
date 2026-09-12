@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // Transition out of the game
       questionState = "transition";
-      questionText.textContent = "Okay... now let's go through our journey ❤️";
+      questionText.textContent = "Okay... now let's go through my thoughts❤️";
       btnYes.textContent = "Let's Go ✨";
       btnNo.style.opacity = "0";
       btnNo.style.pointerEvents = "none";
