@@ -450,13 +450,130 @@ html, body {
   position: relative;
 }
 
+```css
+/* ========================================================================== 
+   PAGE 4: FRIENDSHIP JOURNEY CARDS
+   ========================================================================== */
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.emoji-heading {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.story-cards-container {
+  width: 100%;
+  perspective: 1000px;
+  margin-bottom: 30px;
+  position: relative;
+  min-height: 500px;
+}
+
+.story-card {
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.85) translateZ(-100px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.7s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.story-card.active {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+  pointer-events: auto;
+  z-index: 2;
+  position: relative;
+}
+
+/* FIXED JOURNEY IMAGE */
 .story-card-img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 320px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid var(--glass-border);
+}
+
+/* Journey card content */
+.story-card-content {
+  padding: 20px;
+}
+
+.story-card-date {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 5px;
   display: block;
 }
+
+.story-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.story-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .story-cards-container {
+    min-height: 480px;
+  }
+
+  .story-card-img {
+    height: 280px;
+  }
+
+  .story-card-content {
+    padding: 18px;
+  }
+
+  .story-card-title {
+    font-size: 1.2rem;
+  }
+
+  .story-card-desc {
+    font-size: 0.88rem;
+  }
+}
+```
+
 
 .story-card-content {
   padding: 20px;
