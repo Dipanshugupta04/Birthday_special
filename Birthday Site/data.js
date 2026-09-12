@@ -88,7 +88,7 @@ const birthdayData = {
   // Page 5: 10 Memories Gallery (Polaroids)
   memories: [
     {
-      image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=500&auto=format&fit=crop",
+      image: "https://dgecjrjipfqppzcbifvs.supabase.co/storage/v1/object/public/Images/IMG-20220321-WA0013.jpg",
       caption: "That day 😂"
     },
     {
